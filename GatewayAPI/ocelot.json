@@ -1,0 +1,314 @@
+{
+  "Routes": [
+    //_______________________________Product Microservice Web Api_______________________________
+    {
+      "UpstreamPathTemplate": "/api/Products",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7195
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Products"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Products/{productId}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7195
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Products/{productId}"
+    },
+
+    //_______________________________Fridge Microservice Web Api_______________________________
+
+    //                                   _____Fridges_____
+    {
+      "UpstreamPathTemplate": "/api/Fridges",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7197
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Fridges"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Fridges/{fridgeId}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7197
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Fridges/{fridgeId}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Fridges/products/{fridgeId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7197
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Fridges/products/{fridgeId}"
+    },
+
+    //                                   _____FridgeProducts_____
+    {
+      "UpstreamPathTemplate": "/api/FridgeProducts",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7197
+        }
+      ],
+      "DownstreamPathTemplate": "/api/FridgeProducts"
+    },
+    {
+      "UpstreamPathTemplate": "/api/FridgeProducts/{FridgeProductId}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7197
+        }
+      ],
+      "DownstreamPathTemplate": "/api/FridgeProducts/{FridgeProductId}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/FridgeProducts/fridgeProduct/{fridgeId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7197
+        }
+      ],
+      "DownstreamPathTemplate": "/api/FridgeProducts/fridgeProduct/{fridgeId}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/FridgeProducts/{fridgeId}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7197
+        }
+      ],
+      "DownstreamPathTemplate": "/api/FridgeProducts/{fridgeId}"
+    },
+
+    //                                   _____Models_____
+    {
+      "UpstreamPathTemplate": "/api/Models",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7197
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Models"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Models/{ModelId}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7197
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Models/{ModelId}"
+    },
+
+    //_______________________________Authentication Microservice Web Api_______________________________
+
+    //                                   _____Login_____
+    {
+      "UpstreamPathTemplate": "/api/Login/Exist/{username}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Login/Exist/{username}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Login/Login",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Login/Login"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Login/RefreshToken",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Login/RefreshToken"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Login/Register",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Login/Register"
+    },
+
+    //                                   _____Roles_____
+    {
+      "UpstreamPathTemplate": "/api/Roles",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Roles"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Roles/{roleId}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Roles/{roleId}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Roles/updateUserRole/{roleId}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Roles/updateUserRole/{roleId}"
+    },
+
+    //                                   _____Users_____
+    {
+      "UpstreamPathTemplate": "/api/Users",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Users"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Users/{userId}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Users/{userId}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Users/name/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Users/name/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Users/email/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Users/email/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Users/password/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Users/password/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Users/reset/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7181
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Users/reset/{id}"
+    }
+  ],
+
+  "GlobalConfiguration": {
+    "RequestIdKey": "Api-Gateway",
+    "BaseUrl": "https://localhost:7107"
+  }
+}
