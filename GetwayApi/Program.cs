@@ -16,11 +16,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigins", config =>
     {
         config.SetIsOriginAllowedToAllowWildcardSubdomains()
-        // localhost - front trace
-        .WithOrigins("http://localhost:4200")
-        .AllowAnyHeader()
-        .AllowAnyMethod()
-        .Build();
+              .WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .Build();
     });
 });
 
