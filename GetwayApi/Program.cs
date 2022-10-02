@@ -11,17 +11,25 @@ builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
     .AddEnvironmentVariables();
 
 // Enable CORS
-builder.Services.AddCors(p => p.AddPolicy("corspolicy", build =>
+builder.Services.AddCors(options =>
 {
-    build.WithOrigins("http://localhost:4200", "http://localhost:5000").AllowAnyMethod().AllowAnyHeader();
-}));
+    options.AddPolicy("AllowSpecificOrigins", config =>
+    {
+        config.SetIsOriginAllowedToAllowWildcardSubdomains()
+        // localhost - front trace
+        .WithOrigins("http://localhost:4200")
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .Build();
+    });
+});
 
 builder.Services.AddOcelot();
 
 var app = builder.Build();
 
-app.UseOcelot();
+app.UseCors("AllowSpecificOrigins");
 
-app.UseCors("corspolicy");
+app.UseOcelot();
 
 app.Run();
