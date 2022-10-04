@@ -3,12 +3,17 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Service.Extention;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
     .AddJsonFile("ocelot.json")
     .AddEnvironmentVariables();
+
+builder.Services.AddOcelot();
+
+builder.Services.AddCustomJwtAuthentication();
 
 // Enable CORS
 builder.Services.AddCors(options =>
@@ -23,11 +28,13 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddOcelot();
-
 var app = builder.Build();
 
 app.UseCors("AllowSpecificOrigins");
+
+app.UseAuthorization();
+
+app.UseAuthentication();
 
 app.UseOcelot();
 
