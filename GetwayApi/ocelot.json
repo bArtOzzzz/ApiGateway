@@ -1,9 +1,12 @@
 {
+  // RouteClaimsRequirement: Role - should be only for "Admisistrator" role endpoints with AuthenticationOptions
+  // RouteClaimsRequirement: Role - should not be on endpoints with multiple roles
+
   "Routes": [
     //_______________________________Product Microservice Web Api_______________________________
     {
       "UpstreamPathTemplate": "/api/Products",
-      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -11,7 +14,30 @@
           "Port": 5226
         }
       ],
-      "DownstreamPathTemplate": "/api/Products"
+      "DownstreamPathTemplate": "/api/Products",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Products",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5226
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Products",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "http$//schemas.microsoft.com/ws/2008/06/identity/claims/role": "Administrator"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Products/{productId}",
@@ -23,7 +49,14 @@
           "Port": 5226
         }
       ],
-      "DownstreamPathTemplate": "/api/Products/{productId}"
+      "DownstreamPathTemplate": "/api/Products/{productId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "http$//schemas.microsoft.com/ws/2008/06/identity/claims/role": "Administrator"
+      }
     },
 
     //_______________________________Fridge Microservice Web Api_______________________________
@@ -39,7 +72,11 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/Fridges"
+      "DownstreamPathTemplate": "/api/Fridges",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Fridges/{fridgeId}",
@@ -51,7 +88,11 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/Fridges/{fridgeId}"
+      "DownstreamPathTemplate": "/api/Fridges/{fridgeId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Fridges/products/{fridgeId}",
@@ -63,7 +104,11 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/Fridges/products/{fridgeId}"
+      "DownstreamPathTemplate": "/api/Fridges/products/{fridgeId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
 
     //                                   _____FridgeProducts_____
@@ -77,7 +122,11 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/FridgeProducts"
+      "DownstreamPathTemplate": "/api/FridgeProducts",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     {
       "UpstreamPathTemplate": "/api/FridgeProducts/{FridgeProductId}",
@@ -89,7 +138,11 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/FridgeProducts/{FridgeProductId}"
+      "DownstreamPathTemplate": "/api/FridgeProducts/{FridgeProductId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     {
       "UpstreamPathTemplate": "/api/FridgeProducts/fridgeProduct/{fridgeId}",
@@ -101,7 +154,11 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/FridgeProducts/fridgeProduct/{fridgeId}"
+      "DownstreamPathTemplate": "/api/FridgeProducts/fridgeProduct/{fridgeId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     {
       "UpstreamPathTemplate": "/api/FridgeProducts/{fridgeId}",
@@ -113,7 +170,11 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/FridgeProducts/{fridgeId}"
+      "DownstreamPathTemplate": "/api/FridgeProducts/{fridgeId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
 
     //                                   _____Models_____
@@ -127,11 +188,15 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/Models"
+      "DownstreamPathTemplate": "/api/Models",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Models/{ModelId}",
-      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "UpstreamHttpMethod": [ "Get", "Put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -139,7 +204,30 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/Models/{ModelId}"
+      "DownstreamPathTemplate": "/api/Models/{ModelId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Models/{ModelId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5269
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Models/{ModelId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "http$//schemas.microsoft.com/ws/2008/06/identity/claims/role": "Administrator"
+      }
     },
 
     //_______________________________Authentication Microservice Web Api_______________________________
@@ -205,7 +293,14 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Roles"
+      "DownstreamPathTemplate": "/api/Roles",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "http$//schemas.microsoft.com/ws/2008/06/identity/claims/role": "Administrator"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Roles/{roleId}",
@@ -217,7 +312,14 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Roles/{roleId}"
+      "DownstreamPathTemplate": "/api/Roles/{roleId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "http$//schemas.microsoft.com/ws/2008/06/identity/claims/role": "Administrator"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Roles/updateUserRole/{roleId}",
@@ -229,7 +331,14 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Roles/updateUserRole/{roleId}"
+      "DownstreamPathTemplate": "/api/Roles/updateUserRole/{roleId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "http$//schemas.microsoft.com/ws/2008/06/identity/claims/role": "Administrator"
+      }
     },
 
     //                                   _____Users_____
@@ -243,7 +352,14 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users"
+      "DownstreamPathTemplate": "/api/Users",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "http$//schemas.microsoft.com/ws/2008/06/identity/claims/role": "Administrator"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Users/{userId}",
@@ -255,7 +371,11 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users/{userId}"
+      "DownstreamPathTemplate": "/api/Users/{userId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Users/name/{id}",
@@ -267,7 +387,11 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users/name/{id}"
+      "DownstreamPathTemplate": "/api/Users/name/{id}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Users/email/{id}",
@@ -279,7 +403,11 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users/email/{id}"
+      "DownstreamPathTemplate": "/api/Users/email/{id}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Users/password/{id}",
@@ -291,7 +419,11 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users/password/{id}"
+      "DownstreamPathTemplate": "/api/Users/password/{id}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Users/reset/{id}",
@@ -303,7 +435,11 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users/reset/{id}"
+      "DownstreamPathTemplate": "/api/Users/reset/{id}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     }
   ]
 }
