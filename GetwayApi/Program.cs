@@ -1,6 +1,9 @@
 ﻿using GetwayApi.Extention;
+using GetwayApi.HealthCheck;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -52,9 +55,19 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Add Healthcheck
+builder.Services.AddHealthChecks()
+                .AddCheck<AuthenticationHealthCheck>(nameof(AuthenticationHealthCheck));
+
 var app = builder.Build();
 
 app.UseCors("AllowSpecificOrigins");
+
+// Healthcheck 
+app.MapHealthChecks("/health", new HealthCheckOptions()
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 app.UseAuthorization();
 
