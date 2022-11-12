@@ -5,7 +5,7 @@
   "Routes": [
     //_______________________________Product Microservice Web Api_______________________________
     {
-      "UpstreamPathTemplate": "/api/Products",
+      "UpstreamPathTemplate": "/api/v1/Products",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -14,14 +14,14 @@
           "Port": 5226
         }
       ],
-      "DownstreamPathTemplate": "/api/Products",
+      "DownstreamPathTemplate": "/api/v1/Products",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Products",
+      "UpstreamPathTemplate": "/api/v1/Products",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -30,7 +30,7 @@
           "Port": 5226
         }
       ],
-      "DownstreamPathTemplate": "/api/Products",
+      "DownstreamPathTemplate": "/api/v1/Products",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -40,7 +40,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Products/{productId}",
+      "UpstreamPathTemplate": "/api/v1/Products/{productId}",
       "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -49,7 +49,7 @@
           "Port": 5226
         }
       ],
-      "DownstreamPathTemplate": "/api/Products/{productId}",
+      "DownstreamPathTemplate": "/api/v1/Products/{productId}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -63,7 +63,7 @@
 
     //                                   _____Fridges_____
     {
-      "UpstreamPathTemplate": "/api/Fridges",
+      "UpstreamPathTemplate": "/api/v1/Fridges",
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -72,14 +72,14 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/Fridges",
+      "DownstreamPathTemplate": "/api/v1/Fridges",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Fridges/{fridgeId}",
+      "UpstreamPathTemplate": "/api/v1/Fridges/{fridgeId}",
       "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -88,14 +88,14 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/Fridges/{fridgeId}",
+      "DownstreamPathTemplate": "/api/v1/Fridges/{fridgeId}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Fridges/products/{fridgeId}",
+      "UpstreamPathTemplate": "/api/v1/Fridges/products/{fridgeId}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -104,7 +104,7 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/Fridges/products/{fridgeId}",
+      "DownstreamPathTemplate": "/api/v1/Fridges/products/{fridgeId}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -113,7 +113,7 @@
 
     //                                   _____FridgeProducts_____
     {
-      "UpstreamPathTemplate": "/api/FridgeProducts",
+      "UpstreamPathTemplate": "/api/v1/FridgeProducts",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -122,14 +122,14 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/FridgeProducts",
+      "DownstreamPathTemplate": "/api/v1/FridgeProducts",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/FridgeProducts/{FridgeProductId}",
+      "UpstreamPathTemplate": "/api/v1/FridgeProducts/{FridgeProductId}",
       "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -138,14 +138,14 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/FridgeProducts/{FridgeProductId}",
+      "DownstreamPathTemplate": "/api/v1/FridgeProducts/{FridgeProductId}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/FridgeProducts/fridgeProduct/{fridgeId}",
+      "UpstreamPathTemplate": "/api/v1/FridgeProducts/fridgeProduct/{fridgeId}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -154,14 +154,14 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/FridgeProducts/fridgeProduct/{fridgeId}",
+      "DownstreamPathTemplate": "/api/v1/FridgeProducts/fridgeProduct/{fridgeId}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/FridgeProducts/{fridgeId}",
+      "UpstreamPathTemplate": "/api/v1/FridgeProducts/{fridgeId}",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -170,7 +170,7 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/FridgeProducts/{fridgeId}",
+      "DownstreamPathTemplate": "/api/v1/FridgeProducts/{fridgeId}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -179,7 +179,7 @@
 
     //                                   _____Models_____
     {
-      "UpstreamPathTemplate": "/api/Models",
+      "UpstreamPathTemplate": "/api/v1/Models",
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -188,14 +188,14 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/Models",
+      "DownstreamPathTemplate": "/api/v1/Models",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Models/{ModelId}",
+      "UpstreamPathTemplate": "/api/v1/Models/{ModelId}",
       "UpstreamHttpMethod": [ "Get", "Put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -204,14 +204,14 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/Models/{ModelId}",
+      "DownstreamPathTemplate": "/api/v1/Models/{ModelId}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Models/{ModelId}",
+      "UpstreamPathTemplate": "/api/v1/Models/{ModelId}",
       "UpstreamHttpMethod": [ "Delete" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -220,7 +220,7 @@
           "Port": 5269
         }
       ],
-      "DownstreamPathTemplate": "/api/Models/{ModelId}",
+      "DownstreamPathTemplate": "/api/v1/Models/{ModelId}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -234,7 +234,7 @@
 
     //                                   _____Login_____
     {
-      "UpstreamPathTemplate": "/api/Login/Exist/{username}",
+      "UpstreamPathTemplate": "/api/v1/Login/Exist/{username}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -243,10 +243,10 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Login/Exist/{username}"
+      "DownstreamPathTemplate": "/api/v1/Login/Exist/{username}"
     },
     {
-      "UpstreamPathTemplate": "/api/Login",
+      "UpstreamPathTemplate": "/api/v1/Login",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -255,10 +255,10 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Login"
+      "DownstreamPathTemplate": "/api/v1/Login"
     },
     {
-      "UpstreamPathTemplate": "/api/Login/RefreshToken",
+      "UpstreamPathTemplate": "/api/v1/Login/RefreshToken",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -267,10 +267,10 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Login/RefreshToken"
+      "DownstreamPathTemplate": "/api/v1/Login/RefreshToken"
     },
     {
-      "UpstreamPathTemplate": "/api/Login/Register",
+      "UpstreamPathTemplate": "/api/v1/Login/Register",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -279,12 +279,12 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Login/Register"
+      "DownstreamPathTemplate": "/api/v1/Login/Register"
     },
 
     //                                   _____Roles_____
     {
-      "UpstreamPathTemplate": "/api/Roles",
+      "UpstreamPathTemplate": "/api/v2/Roles",
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -293,7 +293,7 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Roles",
+      "DownstreamPathTemplate": "/api/v2/Roles",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -303,7 +303,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Roles/{roleId}",
+      "UpstreamPathTemplate": "/api/v2/Roles/{roleId}",
       "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -312,7 +312,7 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Roles/{roleId}",
+      "DownstreamPathTemplate": "/api/v2/Roles/{roleId}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -322,7 +322,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Roles/updateUserRole/{roleId}",
+      "UpstreamPathTemplate": "/api/v2/Roles/updateUserRole/{roleId}",
       "UpstreamHttpMethod": [ "Put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -331,7 +331,7 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Roles/updateUserRole/{roleId}",
+      "DownstreamPathTemplate": "/api/v2/Roles/updateUserRole/{roleId}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -343,7 +343,7 @@
 
     //                                   _____Users_____
     {
-      "UpstreamPathTemplate": "/api/Users",
+      "UpstreamPathTemplate": "/api/v2/Users",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -352,7 +352,7 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users",
+      "DownstreamPathTemplate": "/api/v2/Users",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -362,7 +362,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Users/{userId}",
+      "UpstreamPathTemplate": "/api/v2/Users/{userId}",
       "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -371,14 +371,14 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users/{userId}",
+      "DownstreamPathTemplate": "/api/v2/Users/{userId}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Users/name/{id}",
+      "UpstreamPathTemplate": "/api/v2/Users/name/{id}",
       "UpstreamHttpMethod": [ "Put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -387,14 +387,14 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users/name/{id}",
+      "DownstreamPathTemplate": "/api/v2/Users/name/{id}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Users/email/{id}",
+      "UpstreamPathTemplate": "/api/v2/Users/email/{id}",
       "UpstreamHttpMethod": [ "Put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -403,14 +403,14 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users/email/{id}",
+      "DownstreamPathTemplate": "/api/v2/Users/email/{id}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Users/password/{id}",
+      "UpstreamPathTemplate": "/api/v2/Users/password/{id}",
       "UpstreamHttpMethod": [ "Put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -419,14 +419,14 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users/password/{id}",
+      "DownstreamPathTemplate": "/api/v2/Users/password/{id}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Users/reset/{id}",
+      "UpstreamPathTemplate": "/api/v2/Users/reset/{id}",
       "UpstreamHttpMethod": [ "Put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -435,7 +435,7 @@
           "Port": 5039
         }
       ],
-      "DownstreamPathTemplate": "/api/Users/reset/{id}",
+      "DownstreamPathTemplate": "/api/v2/Users/reset/{id}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
