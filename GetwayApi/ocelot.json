@@ -234,63 +234,68 @@
 
     //                                   _____Login_____
     {
-      "UpstreamPathTemplate": "/api/v1/Login/Exist/{username}",
+      "UpstreamPathTemplate": "/api/v1/Exist/{username}",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5039
+          //"Host": "localhost",
+          //"Port": 5039
+          "Host": "https://authenticationmicroapi.azurewebsites.net"
         }
       ],
-      "DownstreamPathTemplate": "/api/v1/Login/Exist/{username}"
+      "DownstreamPathTemplate": "/api/v1/Exist/{username}"
     },
     {
       "UpstreamPathTemplate": "/api/v1/Login",
       "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5039
+          //"Host": "localhost",
+          //"Port": 5039
+          "Host": "https://authenticationmicroapi.azurewebsites.net"
         }
       ],
       "DownstreamPathTemplate": "/api/v1/Login"
     },
     {
-      "UpstreamPathTemplate": "/api/v1/Login/RefreshToken",
+      "UpstreamPathTemplate": "/api/v1/RefreshToken",
       "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5039
+          //"Host": "localhost",
+          //"Port": 5039
+          "Host": "https://authenticationmicroapi.azurewebsites.net"
         }
       ],
-      "DownstreamPathTemplate": "/api/v1/Login/RefreshToken"
+      "DownstreamPathTemplate": "/api/v1/RefreshToken"
     },
     {
-      "UpstreamPathTemplate": "/api/v1/Login/Register",
+      "UpstreamPathTemplate": "/api/v1/Register",
       "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5039
+          //"Host": "localhost",
+          //"Port": 5039
+          "Host": "https://authenticationmicroapi.azurewebsites.net"
         }
       ],
-      "DownstreamPathTemplate": "/api/v1/Login/Register"
+      "DownstreamPathTemplate": "/api/v1/Register"
     },
 
     //                                   _____Roles_____
     {
       "UpstreamPathTemplate": "/api/v2/Roles",
       "UpstreamHttpMethod": [ "Get", "Post" ],
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5039
+          //"Host": "localhost",
+          //"Port": 5039
+          "Host": "https://authenticationmicroapi.azurewebsites.net"
         }
       ],
       "DownstreamPathTemplate": "/api/v2/Roles",
@@ -305,11 +310,12 @@
     {
       "UpstreamPathTemplate": "/api/v2/Roles/{roleId}",
       "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5039
+          //"Host": "localhost",
+          //"Port": 5039
+          "Host": "https://authenticationmicroapi.azurewebsites.net"
         }
       ],
       "DownstreamPathTemplate": "/api/v2/Roles/{roleId}",
@@ -324,11 +330,12 @@
     {
       "UpstreamPathTemplate": "/api/v2/Roles/updateUserRole/{roleId}",
       "UpstreamHttpMethod": [ "Put" ],
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5039
+          //"Host": "localhost",
+          //"Port": 5039
+          "Host": "https://authenticationmicroapi.azurewebsites.net"
         }
       ],
       "DownstreamPathTemplate": "/api/v2/Roles/updateUserRole/{roleId}",

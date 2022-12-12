@@ -48,7 +48,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigins", config =>
     {
         config.SetIsOriginAllowedToAllowWildcardSubdomains()
-              .WithOrigins("http://localhost:4200")
+              .WithOrigins("http://localhost:4200", "https://fridgeproductclient.azurewebsites.net")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .Build();
